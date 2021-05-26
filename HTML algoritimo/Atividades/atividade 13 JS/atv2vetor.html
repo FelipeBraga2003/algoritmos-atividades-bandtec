@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite os lugares para onde você já viajou <input id="inLocaisViajens"><br>
+    <button onclick="cadastro()">Cadastrar local</button><br>
+    Digite o numero do local que quer relembrar <input id="inNumLocal"><br>
+    <button onclick="relembrar()">Relembrar viajem</button><br>
+
+    <div id="frase"></div>
+
+</body>
+</html>
+<script>
+    let vetorLocais = [];
+    let qtdViajens = 0;
+    
+    function cadastro(){
+        let local = inLocaisViajens.value;
+        vetorLocais.push(local);
+        qtdViajens++;
+    }
+
+    function relembrar(){
+        let numeroLocal = Number(inNumLocal.value);
+        if (numeroLocal <= qtdViajens) {
+            frase.innerHTML = `${vetorLocais[numeroLocal - 1]}`;
+        }else{
+            frase.innerHTML = `Sua ${numeroLocal}º viagem não existe`;
+        }
+    }
+</script>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sistema de avaliação de atendimento</h1>
+
+    <button onclick="priNota()" id="priNota">Nota 1</button>
+    <button onclick="segNota()">Nota 2</button>
+    <button onclick="terNota()">Nota 3</button>
+    <button onclick="quaNota()">Nota 4</button>
+    <button onclick="quiNota()">Nota 5</button>
+    <br>
+    
+    <span id="frase">Sua avaliação</span><br>
+    <div id="imagem"></div>
+</body>
+</html>
+
+<script>
+    var nota = 0;
+    var qtdNotas = 0;
+    var media = nota / qtdNotas;
+
+    
+    function priNota(){
+        ++qtdNotas;
+        nota = nota + 1;
+        media = nota / qtdNotas;
+
+        frase.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
+
+        if (media < 2) {
+        imagem.innerHTML = `<img src="tristeza maxima.jfif" alt="tristeza">`;
+        }else if (media <=3) {
+            imagem.innerHTML = `<img src="neutro.jfif" alt="muleke neutro">`;
+        }else if (media <=4.5) {
+            imagem.innerHTML = `<img src="durvalsorrindo.jfif" alt="durval sem sorrisinho">`;
+        }else{
+            imagem.innerHTML = `<img src="felicidadeMaxima.jpg" alt="gaules">`;
+        }
+    }
+    function segNota(){
+        ++qtdNotas;
+        nota = nota + 2;
+        media = nota / qtdNotas;
+
+        frase.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
+
+        if (media < 2) {
+        imagem.innerHTML = `<img src="tristeza maxima.jfif" alt="tristeza">`;
+        }else if (media <=3) {
+            imagem.innerHTML = `<img src="neutro.jfif" alt="muleke neutro">`;
+        }else if (media <=4.5) {
+            imagem.innerHTML = `<img src="durvalsorrindo.jfif" alt="durval sem sorrisinho">`;
+        }else{
+            imagem.innerHTML = `<img src="felicidadeMaxima.jpg" alt="gaules">`;
+        }
+    }
+    function terNota(){
+        ++qtdNotas;
+        nota = nota + 3;
+        media = nota / qtdNotas;
+        
+        frase.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
+
+        if (media < 2) {
+        imagem.innerHTML = `<img src="tristeza maxima.jfif" alt="tristeza">`;
+        }else if (media <=3) {
+            imagem.innerHTML = `<img src="neutro.jfif" alt="muleke neutro">`;
+        }else if (media <=4.5) {
+            imagem.innerHTML = `<img src="durvalsorrindo.jfif" alt="durval sem sorrisinho">`;
+        }else{
+            imagem.innerHTML = `<img src="felicidadeMaxima.jpg" alt="gaules">`;
+        }
+    }
+    function quaNota(){
+        ++qtdNotas;
+        nota = nota + 4;
+        media = nota / qtdNotas;
+        
+        frase.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
+
+        if (media < 2) {
+        imagem.innerHTML = `<img src="tristeza maxima.jfif" alt="tristeza">`;
+        }else if (media <=3) {
+            imagem.innerHTML = `<img src="neutro.jfif" alt="muleke neutro">`;
+        }else if (media <=4.5) {
+            imagem.innerHTML = `<img src="durvalsorrindo.jfif" alt="durval sem sorrisinho">`;
+        }else{
+            imagem.innerHTML = `<img src="felicidadeMaxima.jpg" alt="gaules">`;
+        }
+    }
+    function quiNota(){
+        ++qtdNotas;
+        nota = nota + 5;
+        media = nota / qtdNotas;
+        
+        frase.innerHTML = `Sua avaliação: ${media.toFixed(1)}`;
+        
+        if (media < 2) {
+        imagem.innerHTML = `<img src="tristeza maxima.jfif" alt="tristeza">`;
+        }else if (media <=3) {
+            imagem.innerHTML = `<img src="neutro.jfif" alt="muleke neutro">`;
+        }else if (media <=4.5) {
+            imagem.innerHTML = `<img src="durvalsorrindo.jfif" alt="durval sem sorrisinho">`;
+        }else{
+            imagem.innerHTML = `<img src="felicidadeMaxima.jpg" alt="gaules">`;
+        }
+    }
+</script>

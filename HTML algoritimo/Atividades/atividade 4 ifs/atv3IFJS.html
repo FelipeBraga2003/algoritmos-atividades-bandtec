@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos filhos você tem? <input id="qtdFilhos"><br>
+
+    <button onclick="verSit()">Verificar situação</button><br>
+
+    <span id="frase"></span><br>
+</body>
+</html>
+
+<script>
+    function verSit(){
+        var filhos = Number(qtdFilhos.value);
+
+        if (filhos == 0) {
+            frase.innerHTML = `Você não tem descendentes`;
+        }
+
+        if (filhos == 1) {
+            frase.innerHTML = `Você tem um filho único`;
+        }
+
+        if (filhos >= 2) {
+            frase.innerHTML = `Crescei e multiplicai-vos!`;
+        }
+
+    }
+</script>

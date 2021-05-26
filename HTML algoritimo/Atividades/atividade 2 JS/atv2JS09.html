@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        Digite o KI base do guerreiro: <input id="kiBase">
+        <br>
+        <button onclick="ssj()">SSJ</button>
+        <button onclick="ssj2()">SSJ2</button>
+        <button onclick="ssj3()">SSJ3</button>
+        <br>
+        <span id="frase"></span>
+    </body>
+</html>
+<script>
+    function ssj(){
+        var ki = Number(kiBase.value);
+        var tt = ki*50;
+
+        frase.innerHTML=` Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${tt}<br>`+
+        `<img src="SSJpng.png">`;
+    }
+    function ssj2(){
+        var ki = Number(kiBase.value);
+        var tt = ki*100;
+        frase.innerHTML=` Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${tt}<br>`+
+        `<img src="SSJ2.png">`;
+    }
+    function ssj3(){
+        var ki = Number(kiBase.value);
+        var tt = ki*200;
+        frase.innerHTML=` Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${tt}<br>`+
+        `<img src="SSJ3.png">`;
+    }
+</script>

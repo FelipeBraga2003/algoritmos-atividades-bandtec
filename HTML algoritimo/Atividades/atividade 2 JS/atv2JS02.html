@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        Digite o número de votos que o Zé Buduia teve: <input id="votoZe"><br>        
+        Digite o número de votos que o Mario Bigodenha teve: <input id="votoMario"><br>
+        Digite o número de votos em branco que tiveram na eleição: <input id="votoBranco"><br>
+        Digite o número de votos nulos que tiveram na eleição: <input id="votoNulo"><br>
+        
+        <button onclick="votacao()">Resultado da eleição</button><br>
+
+        <span id="elei"></span>
+        <span id="elei2"></span>
+        <span id="elei3"></span>
+        <span id="elei4"></span>
+    </body>
+    </html>
+<script>
+    function votacao(){
+        var ze = Number(votoZe.value); 
+        var mario = Number(votoMario.value); 
+        var branco = Number(votoBranco.value); 
+        var nulo = Number(votoNulo.value);
+        var total = ze + mario + branco + nulo;
+        var invalido = branco + nulo;
+
+        elei.innerHTML = `<b>Total de votos: <u>${total}</u> </b><br>`;
+        elei2.innerHTML = `<b>Zé Buduia: </b> (${(ze * 100) / total}%) (${ze} votos) <br>`;
+        elei3.innerHTML = `<b>Mario</b> (${(mario * 100) / total}%) (${mario} votos)<br>`;
+        elei4.innerHTML = `<b>Inválido</b> (${invalido * 100 / total}%) (${invalido} votos)<br>`;
+        
+    }
+</script>

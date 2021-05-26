@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a nota do aluno <input id="notaAluno"><br>
+
+    <button onclick="clasific()">Classificar Aluno</button><br>
+
+    <span id="frase"></span>
+</body>
+</html>
+
+<script>
+    function clasific(){
+        var nota = Number(notaAluno.value);
+
+        if(nota < 0){
+            frase.innerHTML = "Nota fora do padrão";
+        }else if (nota < 5) {
+            frase.innerHTML = `Aluno precisa de muita ajuda`;
+            frase.style.color = "red";
+        }else if (nota<=7) {
+            frase.innerHTML = `Aluno na média`;
+            frase.style.color = "orange";
+        }else if (nota<=9.5) {
+            frase.innerHTML = `Aluno acima da média`;
+            frase.style.color = "green";
+        }else if(nota<=10){
+            frase.innerHTML = `Aluno fora da curva`;
+            frase.style.color = "blue";
+        }else{
+            frase.innerHTML = "Nota fora do padrão";
+        }
+    }
+</script>

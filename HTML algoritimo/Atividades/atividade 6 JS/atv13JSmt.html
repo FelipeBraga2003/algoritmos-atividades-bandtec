@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="frasePao">Porções de pão francês: 0</span><br>
+    <span id="fraseBovina">Porções de carne boniva: 0</span><br>
+    <span id="fraseSoja">Porções de carne de soja: 0</span><br>
+    <span id="fraseFeijao">Porções de arroz com feijão: 0</span><br>
+    <span id="fraseTotal">Total de calorias: 0</span><br>
+
+    <button onclick="paoFranca()">Comer pão frances</button><br>
+    <button onclick="carneBoi()">Comer porção de carne boniva</button><br>
+    <button onclick="carneMato()">Comer porção de carne de soja</button><br>
+    <button onclick="arroizinFeijao()">Comer porção de arroz com feijão</button><br>
+    <button onclick="Recomecar()">Recomeçar</button><br>
+</body>
+</html>
+
+<script>
+    var cliquePri = 0;
+    var cliqueSeg = 0;
+    var cliqueTer = 0;
+    var cliqueQua = 0;
+    var cliqueTotal = 0;
+
+    function paoFranca(){
+        var caloria = 50;
+        cliqueTotal = cliqueTotal += caloria;
+
+        cliquePri = cliquePri += caloria;
+
+        frasePao.innerHTML = `Porções de pão francês: ${cliquePri}`;
+        fraseTotal.innerHTML = `Total de calorias: ${cliqueTotal}`;
+    }
+    function carneBoi(){
+        var caloria = 100;
+        cliqueTotal = cliqueTotal += caloria;
+
+        cliqueSeg = cliqueSeg += caloria;
+        
+        fraseBovina.innerHTML = `Porções de carne boniva: ${cliqueSeg}`;
+        fraseTotal.innerHTML = `Total de calorias: ${cliqueTotal}`;
+    }
+    function carneMato(){
+        var caloria = 30;
+        cliqueTotal = cliqueTotal += caloria;
+
+        cliqueTer = cliqueTer += caloria;
+
+        fraseSoja.innerHTML = `Porções de carne de soja: ${cliqueTer}`;
+        fraseTotal.innerHTML = `Total de calorias: ${cliqueTotal}`;
+    }
+    function arroizinFeijao(){
+        var caloria = 120;
+        cliqueTotal = cliqueTotal += caloria;
+
+        cliqueQua = cliqueQua += caloria;
+
+        fraseFeijao.innerHTML = `Porções de arroz com feijão: ${cliqueQua}`;
+        fraseTotal.innerHTML = `Total de calorias: ${cliqueTotal}`;
+    }
+    function Recomecar(){
+        var caloria = 0;
+        cliquePri = 0;
+        cliqueSeg = 0;
+        cliqueTer = 0;
+        cliqueQua = 0;
+        cliqueTotal = 0;
+        frasePao.innerHTML = `Porções de pão francês: ${cliquePri}`;
+        fraseBovina.innerHTML = `Porções de carne boniva: ${cliqueSeg}`;
+        fraseSoja.innerHTML = `Porções de carne de soja: ${cliqueTer}`;
+        fraseFeijao.innerHTML = `Porções de arroz com feijão: ${cliqueQua}`;
+        fraseTotal.innerHTML = `Total de calorias: ${cliqueTotal}`;
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Escolha um time grande de São Paulo
+    <select id="selectTime">
+        <option value="santos.png">Santos</option>
+        <option value="spfc.png">São Paulo</option>
+        <option value="timinho.png">Corinthians</option>
+        <option value="semMundial.jfif">Palmeiras</option>
+    </select><br>
+
+    <button onclick="verEscudo()">Ver escudo</button><br>
+    <img src="" id="imagemTime">
+</body>
+</html>
+
+<script>
+
+    function verEscudo(){
+        imagemTime.src = selectTime.value;
+    }
+</script>
+

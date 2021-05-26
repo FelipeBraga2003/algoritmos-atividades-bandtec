@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o valor do carro a ser financiado <input id="valFinanc"><br>
+    Diggite a quantidade de parcelas do financiamento <input id="qtdParcelas"><br>
+
+    <button onclick="verPar()">Ver parcelas</button><br>
+    <span id="frase"></span>
+
+</body>
+</html>
+
+<script>
+    function verPar(){
+        var valCarro = Number(valFinanc.value);
+        var parcelas = Number(qtdParcelas.value);
+        var contador = 1;
+
+        frase.innerHTML = "";
+
+        if(valCarro < 1000){
+            alert("Valor total inválido");
+        }else if(parcelas <6){
+            alert("Parcelas inválidas");
+        }else{
+            while(contador <= parcelas){
+                var valorParcela = valCarro/parcelas;
+                var calcJuros = (valorParcela) * 0.015; 
+                var parcelaJuros = valorParcela + calcJuros;
+
+                while(contador ==  1){
+                    frase.innerHTML += `Parcela ${contador} = ${valorParcela} <br>`;
+                    ++contador;
+                }
+                
+                while(contador > 1 && contador <= parcelas){
+                    frase.innerHTML += `Parcela ${contador} = ${parcelaJuros} <br>`;
+                    parcelaJuros = parcelaJuros + calcJuros;
+                    ++contador;
+                }
+                ++contador;
+            }
+        }
+
+    }
+</script>

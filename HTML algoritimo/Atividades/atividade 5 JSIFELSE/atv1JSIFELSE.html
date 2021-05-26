@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite seu nome <input id="nomePessoa"><br>
+    Digite sua idade <input id="idadePessoa"><br>
+
+    <button onclick="avalAluno()">Avaliar aluno</button><br>
+
+    <span id="frase"></span>
+</body>
+</html>
+
+<script>
+    function avalAluno(){
+        var idade = Number(idadePessoa.value);
+        var calcIdade = (idade / 18) * 100;
+
+        if (idade >= 18) {
+            frase.innerHTML = `${nomePessoa.value} vamos tirar a CNH?<br>`;
+        }else{
+            frase.innerHTML = `${nomePessoa.value}, você possui ${calcIdade.toFixed(1)}% da idade necessária para 
+            tirar a CNH, vá jogar Playstation!`;
+        }
+    }
+</script>

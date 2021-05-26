@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    RA do aluno: <input id="inputRADoaluno">
+    <br>
+    Nota do aluno: <input id="inputNotaDoAluno">
+    <br>
+    <button onclick="cadastrarValores()">Guardar</button>
+    <br>
+    Digite P ou I <input maxlength="1" id="inputPOuI">
+    <br>
+    <button onclick="analisar()">Analisar</button>
+    <br>
+    <span id="frase"></span>
+</body>
+</html>
+<script>
+    var vetorRAAluno = [];
+    var vetorNotaAluno = [];
+    function cadastrarValores(){
+        RADoAluno = inputRADoaluno.value;
+        NotaAluno = Number(inputNotaDoAluno.value);
+
+        vetorRAAluno.push(RADoAluno);
+        vetorNotaAluno.push(NotaAluno);
+    }
+
+    function analisar(){
+        let modoVisualizacao = inputPOuI.value;
+
+        if (modoVisualizacao.toLowerCase() != "p" && modoVisualizacao.toLowerCase() != "i") {
+            alert("Valor invalido, entre com P ou I");
+        }else{
+            var vetorRAFiltrados = [];
+            var vetorNotasFiltrados = [];
+            var somatoria = 0;
+
+            for (var contador = 0; contador < vetorRAAluno.length; contador++) {
+                if (modoVisualizacao.toLowerCase() == "p") {
+                    if (vetorRAAluno % 2 == 0) {
+                        vetorRAFiltrados.push(vetorRAAluno[contador]);
+                        vetorNotasFiltrados.push(vetorNotaAluno[contador]);
+                        somatoria += vetorNotaAluno[contador];
+                    }
+                }else{
+                    if (vetorRAAluno % 2 != 0) {
+                        vetorRAFiltrados.push(vetorRAAluno[contador]);
+                        vetorNotasFiltrados.push(vetorNotaAluno[contador]);
+                        somatoria += vetorNotaAluno[contador];
+
+                    }
+                }
+            }
+
+            var media = somatoria / vetorNotasFiltrados.length;
+
+            frase.innerHTML = "";
+
+            for (var contador = 0; contador < vetorNotasFiltrados.length; contador++) {
+                var RAFiltrado = vetorRAFiltrados[contador];
+                var notaFiltrada = vetorNotasFiltrados[contador];
+                if (notaFiltrada >= media) {
+                    frase.innerHTML += `Aluno com RA: ${RAFiltrado} e nota ${notaFiltrada} foi selcionado pois a media é ${media}<br>`;
+                }
+            }
+        }
+    }
+</script>

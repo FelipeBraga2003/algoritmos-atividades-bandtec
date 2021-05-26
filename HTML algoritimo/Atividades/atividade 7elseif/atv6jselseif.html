@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select onchange="estacoes()" id="meses">
+        <option value="Janeiro">Janeiro</option>
+        <option value="Fevereiro">Fevereiro</option>
+        <option value="Marco">Março</option>
+        <option value="Abril">Abril</option>
+        <option value="Maio">Maio</option>
+        <option value="Junho">Junho</option>
+        <option value="Julho">Julho</option>
+        <option value="Agosto">Agosto</option>
+        <option value="Setembro">Setembro</option>
+        <option value="Outubro">Outubro</option>
+        <option value="Novembro">Novembro</option>
+        <option value="Dezembro">Dezembro</option>
+    </select>
+
+    <div id="imagem"></div>
+</body>
+</html>
+
+<script>
+    function estacoes(){
+        if (meses.value == "Janeiro") {
+            imagem.innerHTML = `<img src="inverno.jfif" alt="inverno">`;
+        }else if (meses.value == "Fevereiro") {
+            imagem.innerHTML = `<img src="inverno.jfif" alt="inverno">`;
+        }else if (meses.value == "Marco") {
+            imagem.innerHTML = `<img src="primavera.jfif" alt="primavera">`;
+        }else if (meses.value == "Abril") {
+            imagem.innerHTML = `<img src="primavera.jfif" alt="primavera">`;
+        }else if (meses.value == "Maio") {
+            imagem.innerHTML = `<img src="primavera.jfif" alt="primavera">`;
+        }else if (meses.value == "Junho") {
+            imagem.innerHTML = `<img src="verao.jpg" alt="verao">`;
+        }else if (meses.value == "Julho") {
+            imagem.innerHTML = `<img src="verao.jpg" alt="verao">`;
+        }else if (meses.value == "Agosto") {
+            imagem.innerHTML = `<img src="verao.jpg" alt="verao">`;
+        }else if (meses.value == "Setembro") {
+            imagem.innerHTML = `<img src="outono.jfif" alt="outono">`;
+        }else if (meses.value == "Outubro") {
+            imagem.innerHTML = `<img src="outono.jfif" alt="outono">`;
+        }else if (meses.value == "Novembro") {
+            imagem.innerHTML = `<img src="outono.jfif" alt="outono">`;
+        }else{
+            imagem.innerHTML = `<img src="inverno.jfif" alt="inverno">`;
+        }
+    }
+</script>

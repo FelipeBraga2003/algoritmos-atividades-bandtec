@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o nome dos filmes que gosta <input id="inFilmesGosta"><br>
+    <button onclick="cadastrar()">Cadastrar</button><br>
+    <div id="frase"></div>
+
+</body>
+</html>
+<script>
+    let vetorFilme =[]
+    function cadastrar(){
+        let filme = inFilmesGosta.value;
+        vetorFilme.push(filme);
+        if (vetorFilme.length % 2 == 1) {
+            frase.innerHTML += `<span style="color: blue;">${filme}<br></span>`;
+        }else{
+            frase.innerHTML += `<span style="color: red;">${filme}<br></span>`;
+        }
+    }
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    De quantos em quantos dias você faz musculação? <input id="qtdDiasMusculo"><br>
+    <button onclick="exibaRotinaMensal()">Exibir rotina mensal</button><br>
+    <span id="frase"></span>
+</body>
+</html>
+<script>
+    function exibaRotinaMensal(){
+        var diasTreino = Number(qtdDiasMusculo.value);
+        var dias = 1;
+        var i = 0;
+        var qtdDias = 1;
+        var contador = 0;
+        frase.innerHTML = "";
+
+        while (contador++ <30) {
+            if (contador % diasTreino ==1) {
+                frase.innerHTML += `Dias ${dias} - Musculação <br>`;
+            }else{
+                frase.innerHTML += `Dias ${dias} - Comer, dormir etc<br>`;
+            }
+        }
+
+        // while (i < dias && dias < 30) {
+        //     while (i <= diasTreino || dias <= 30) {
+        //         if (dias == qtdDias) {
+        //             frase.innerHTML += `Dias ${dias} - Musculação <br>`;
+        //             qtdDias = qtdDias + diasTreino;
+        //         }else{
+        //             frase.innerHTML += `Dias ${dias} - Comer, dormir etc<br>`;
+        //             i++;
+        //         }
+        //         i++;
+        //         dias++;
+        //     }
+        //     i++;
+        //     dias++;
+        // }
+    }
+</script>

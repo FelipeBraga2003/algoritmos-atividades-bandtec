@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <h3>PROGRAMA DE PIZZA</h3>
+
+        Digite o sabor da pizza<input id="sabor" placeholder="Digite o sabor"><br>
+        Digite o valor da pizza<input id="valor" placeholder="Digite o valor"><br>
+        Quantos amigos irão comer está pizza? <input id="amigos"placeholder="Digite a quantidade de amigos"><br>
+
+        <button onclick="valTot()">Ver valor por amigo</button><br>
+
+        <span id="frase"></span>
+    </body>
+</html>
+<script>
+    function valTot(){
+        var val = Number(valor.value);
+        var ami = Number(amigos.value) + 1;
+        var pre = val + val*0.1;
+        var tot = pre/ ami;
+
+        frase.innerHTML = `Cada amigo vai colaborar com R$${tot} para a pizza de sabor ${sabor.value}`;
+    }
+</script>

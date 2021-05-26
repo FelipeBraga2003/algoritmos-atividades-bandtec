@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Dia do deposito: <input id="inputDiaDoDeposito">
+    <br>
+    Valor depositado: <input id="inputValorDepositado">
+    <br>
+    <button onclick="guardarValoresDoDeposito()">Guardar</button>
+    <br>
+    Primeiro dia do intervalo: <input id="inputPrimeiroDiaDoIntervalo">
+    <br>
+    Segundo dia do intervalo: <input id="inputSegundoDiaDoIntervalo">
+    <br>
+    <button onclick="reverDepositos()">Rever depósitos</button>
+    <br>
+    <div id="mostrarDepositos"></div>
+    <div id="mensagemFinal"></div>
+</body>
+</html>
+<script>
+    var vetorDiaDeposito = [];
+    var vetorValorDeposito = [];
+
+    function guardarValoresDoDeposito(){
+        let diaDoDeposito = Number(inputDiaDoDeposito.value);
+        let valorDoDeposito = Number(inputValorDepositado.value);
+
+        vetorDiaDeposito.push(diaDoDeposito);
+        vetorValorDeposito.push(valorDoDeposito);
+    }
+
+    function reverDepositos(){
+        let primeroDiaIntervalo = Number(inputPrimeiroDiaDoIntervalo.value);
+        let segundoDiaIntervalo = Number(inputSegundoDiaDoIntervalo.value);
+
+        let vetorIntervalo = [];
+    
+        mostrarDepositos.innerHTML = "";
+
+        for (var contador = 0; contador < vetorDiaDeposito.length; contador++) {
+            let ultimoDeposito = vetorDiaDeposito[contador];
+
+            if (ultimoDeposito >= primeroDiaIntervalo && ultimoDeposito <= segundoDiaIntervalo) {
+                vetorIntervalo.push(ultimoDeposito);
+                if (ultimoDeposito % 2 == 0) {
+                    mostrarDepositos.innerHTML += `<span style="background-color: rgb(93, 108, 238);">Dia ${ultimoDeposito} Valor depositado: ${vetorValorDeposito[contador]}<br></span>`;
+                }else{
+                    mostrarDepositos.innerHTML += `<span style="background-color: rgb(39, 224, 39);">Dia ${ultimoDeposito} Valor depositado: ${vetorValorDeposito[contador]}<br></span>`;
+                }
+                
+            }
+        }
+        var soma = 0;
+        for (var contador = 0; contador < vetorIntervalo.length; contador++) {
+            soma += vetorIntervalo[contador];
+
+            media = soma / vetorIntervalo.length;
+            mensagemFinal.innerHTML= `Quantidade de dias selecionados: ${vetorIntervalo.length},
+                                    Soma dos valores: ${soma}, e a média é: ${media}`;
+        }
+
+    }
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="oito()">08 passagens</button>
+    <button onclick="vinte()">20 passagens</button>
+    <button onclick="cinquenta()">50 passagens</button><br>
+
+    <span id="frase"></span>
+</body>
+</html>
+
+<script>
+    function oito(){
+        var passagens = 8;
+        
+        var calcValorPassagem = passagens * 4.06;
+        var calcValorPassagemCheia = passagens * 4.40;
+        var calculoPorcento = ((calcValorPassagem/calcValorPassagemCheia)) * 100;
+        var nova = 100 - calculoPorcento;
+        console.log("asdasdasdfasf");
+
+        var bonus = (calcValorPassagemCheia - calcValorPassagem) /4.40;
+        frase.innerHTML = `Ao comprar ${passagens} passagens, você pagou ${nova.toFixed(2)}% a menos.
+        É como se tivesse ganhado ${bonus.toFixed(1)} passagens de bônus<br>`;
+    }
+    function vinte(){
+        var passagens = 20;
+
+        var calcValorPassagem = passagens * 3.93;
+        var calcValorPassagemCheia = passagens * 4.40;
+        var calculoPorcento = ((calcValorPassagem/calcValorPassagemCheia)) * 100;
+        var nova = 100 - calculoPorcento;
+
+        var bonus = (calcValorPassagemCheia - calcValorPassagem) /4.40;
+        frase.innerHTML = `Ao comprar ${passagens} passagens, você pagou ${nova.toFixed(2)}% a menos.
+        É como se tivesse ganhado ${bonus.toFixed(1)} passagens de bônus<br>`;
+    }
+    function cinquenta(){
+        var passagens = 50;
+        
+        var calcValorPassagem = passagens * 3.83;
+        var calcValorPassagemCheia = passagens * 4.40;
+        var calculoPorcento = ((calcValorPassagem/calcValorPassagemCheia)) * 100;
+        var nova = 100 - calculoPorcento;
+
+        var bonus = (calcValorPassagemCheia - calcValorPassagem) /4.40;
+        frase.innerHTML = `Ao comprar ${passagens} passagens, você pagou ${nova.toFixed(2)}% a menos.
+        É como se tivesse ganhado ${bonus.toFixed(1)} passagens de bônus<br>`;
+    }
+</script>

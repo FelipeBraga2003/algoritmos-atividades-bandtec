@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a frequência do aluno <input id="freqAluno"><br>
+
+    <button onclick="analFreq()">Analisar frequência</button><br>
+
+    <div id="imagem"></div>
+
+    
+</body>
+</html>
+
+<script>
+    function analFreq() {
+        var frequencia = Number(freqAluno.value);
+
+        if (frequencia < 50) {
+            imagem.innerHTML = `<img src="turista.jfif" alt="O aluno turista">`;
+        }else{
+            imagem.innerHTML = `<img src="alunoEstudioso.jpg" alt="O aluno estudioso" width="250px" height="400px">`;
+        }
+    }
+</script>

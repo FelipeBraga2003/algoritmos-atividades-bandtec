@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Primeiro número <input id="priNum"><br>
+    Segundo número <input id="segNum"><br>
+
+    <button onclick="divisao()">Divisão</button><br>
+
+    <span id="result"></span>
+</body>
+</html>
+
+<script>
+    function divisao() {
+        // toFixed();
+        var primeiro= Number(priNum.value); 
+        var segundo = Number(segNum.value); 
+        
+        var varDivisao = primeiro/segundo;
+
+        result.innerHTML = `O resultado de ${primeiro} com ${segundo}
+        é ${varDivisao.toFixed(2)}<br><br>`;
+
+        result.innerHTML += `Porém o valor original da divisão é ${varDivisao}`; 
+    }
+</script>

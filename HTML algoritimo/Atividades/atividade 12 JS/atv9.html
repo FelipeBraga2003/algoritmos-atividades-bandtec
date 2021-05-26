@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="mostrar()">Curto 3 e 5</button><br>
+    <span id="frase"></span>
+</body>
+</html>
+<script>
+    function mostrar(){
+        var contador = 1;
+
+        while (contador < 101) {
+            
+            if(contador % 3 == 0 && contador % 5 == 0){
+                frase.innerHTML += `É tri!É penta!<br>`;
+            }else if (contador % 3 == 0) {
+                frase.innerHTML += `É tri!<br>`;
+            }else if(contador % 5 == 0){
+                frase.innerHTML += `É penta!<br>`;
+            }else{
+                frase.innerHTML += `${contador}<br>`;
+            }
+            ++contador;
+        }
+    }
+</script>

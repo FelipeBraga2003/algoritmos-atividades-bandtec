@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        Digite um número para ver a tabuada: <input id="numTb" placeholder="Digite um número"><br>
+
+        <button onclick="tabuada()">Mostrar tabuada</button><br>
+        <span id="msTb"></span>
+    </body>
+</html>
+
+<script>
+    function tabuada(){
+        var n1 = Number(numTb.value);
+        msTb.innerHTML = `${n1} x 1 = ${n1* 1} <br>`+
+        `${n1} x 2 = ${n1* 2} <br>`+
+        `${n1} x 3 = ${n1* 3} <br>`+
+        `${n1} x 4 = ${n1* 4} <br>`+
+        `${n1} x 5 = ${n1* 5} <br>`+
+        `${n1} x 6 = ${n1* 6} <br>`+
+        `${n1} x 7 = ${n1* 7} <br>`+
+        `${n1} x 8 = ${n1* 8} <br>`+
+        `${n1} x 9 = ${n1* 9} <br>`;
+
+    }
+</script>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora para o gerente</title>
+</head>
+
+
+    <body>
+        <div style="float: left;">
+            <img src="data:image/jpeg;base64,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" alt="foto da primeira equipe">
+            <br> Nome da equipe: 
+            <input id="nomeEquipe1" placeholder="Digite o nome da equipe"><br>
+            Nome do projeto: 
+            <input id="nomeProjeto1" placeholder="Digite o nome do projeto"><br>
+            Duração do projeto em dias: 
+            <input id="duraProjDia1" placeholder="Digite a duração do projeto em dias"><br>
+            Custo total do projeto: 
+            <input id="custoProjTot1" placeholder="Digite o custo total do projeto"><br>
+            Quantidade de horas do projeto: 
+            <input id="qtdHoraProj1" placeholder="Digite a quantidade de horas do projeto"><br>
+        </div>
+    
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKOUSJT2pkOOQWwEHIyQ1v5uG5u03G8VfK3Q&usqp=CAU" alt="foto da segunda equipe">
+            <br> Nome da equipe: 
+            <input id="nomeEquipe2" placeholder="Digite o nome da equipe"><br>
+            Nome do projeto: 
+            <input id="nomeProjeto2" placeholder="Digite o nome do projeto"><br>
+            Duração do projeto em dias: 
+            <input id="duraProjDia2" placeholder="Digite a duração do projeto em dias"><br>
+            Custo total do projeto: 
+            <input id="custoProjTot2" placeholder="Digite o custo total do projeto"><br>
+            Quantidade de horas do projeto: 
+            <input id="qtdHoraProj2" placeholder="Digite a quantidade de horas do projeto"><br>
+        </div><br>
+
+        <div>
+            Custo por hora para projeto de T.I: 
+            <input id="custoHora" placeholder="Digite o custo por hora do projeto">
+        </div>
+
+        <button onclick="analisarProjeto()">Analisar projetos</button><br>
+
+        <span id="anaTemp"></span><br>
+        <span id="anaCust"></span><br>
+
+        
+            <div id="barra1"></div>
+            <div id="barra2"></div>
+        <br><br>
+
+        <br><span id="anaRef"></span>
+
+    </body>
+</html>
+
+<script>
+    function analisarProjeto(){
+        var nomeDaEquipe = nomeEquipe1.value;
+        var nomeDoProjeto = nomeProjeto1.value;
+        var duracaoPorDia = duraProjDia1.value;
+        var custoTotalDoProjeto = custoProjTot1.value;
+        var quantidadeDeHoarasProProj = qtdHoraProj1.value;
+        
+        var F = custoTotalDoProjeto/quantidadeDeHoarasProProj;
+        var G = quantidadeDeHoarasProProj/duracaoPorDia;
+
+
+        var nome2Equipe = nomeEquipe2.value;
+        var nomeDoProjeto2 = nomeProjeto2.value;
+        var duracaoPorDia2 = duraProjDia2.value;
+        var custoTotalDoProjeto2 = custoProjTot2.value;
+        var quantidadeDeHoarasProProj2 = qtdHoraProj2.value;       
+        
+        var P = custoTotalDoProjeto2/quantidadeDeHoarasProProj2;
+        var Q = quantidadeDeHoarasProProj2/duracaoPorDia2;
+        var X = F/P * 100;
+
+        var Y = custoHora.value;
+
+        var H = F/Y * 100;
+        var R = P/Y * 100;
+
+        var contaBarra1 = (F * 1000)/(F + P);
+        var contaBarra2 = (P * 1000)/(F + P);
+
+        anaTemp.innerHTML = `<b>Ánalise de tempo</b><br> 
+        O projeto ${nomeDoProjeto} foi desenvolvido em 
+        <span style = "color: red"><b>${quantidadeDeHoarasProProj}</b></span> 
+        horas num período de 
+        <span style = "color: red"><b>${duracaoPorDia}</b></span> 
+        dias, portanto a equipe ${nomeDaEquipe} trabalhou em média 
+        <span style = "color: red"><b>${G}</b></span> 
+        horas por dia nesse projeto. <br>
+
+        O projeto ${nomeDoProjeto2} foi desenvolvido em 
+        <span style = "color: blue"><b>${quantidadeDeHoarasProProj2}</b></span> 
+        horas num período de 
+        <span style = "color: blue"><b>${duracaoPorDia2}</b></span>
+        dias, portanto a equipe ${nome2Equipe} trabalhou em média 
+        <span style = "color: blue"><b>${Q}</b></span> 
+        horas por dia nesse projeto. <br>`;
+
+        anaCust.innerHTML = `<b>Ánalise de custo</b><br> 
+        A equipe ${nomeDaEquipe} desenvolveu o projeto ${nomeDoProjeto} em 
+        <span style = "color: red"><b>${quantidadeDeHoarasProProj}</b></span> 
+        horas a um custo de 
+        R$<span style = "color: red"><b>${custoTotalDoProjeto}</b></span>, 
+        portanto o custo por hora desse projeto é 
+        <span style = "color: red"><b>${F}</b></span><br>
+        
+        A equipe ${nome2Equipe} desenvolveu o projeto ${nomeDoProjeto2} em 
+        <span style = "color: blue"><b>${quantidadeDeHoarasProProj2}</b></span> 
+        horas a um custo de 
+        R$<span style = "color: blue"><b>${custoTotalDoProjeto2}</b></span>, 
+        portanto o custo por hora desse projeto é 
+        <span style = "color: blue"><b>${P}</b></span>. <br>
+        
+        Observe que o custo por hora do projeto ${nomeDoProjeto} é <span style = "color: red"><b>${X}%</b></span> 
+        do custo por hora do projeto ${nomeDoProjeto2}. <br>`;
+
+        barra1.style.width = `${contaBarra1}px`;
+        barra1.style.height = "35px";
+        barra1.style.backgroundColor = "red";
+        barra1.style.float = "left";
+
+        barra2.style.width = `${contaBarra2}px`;
+        barra2.style.height = "35px";
+        barra2.style.backgroundColor = "blue";
+        barra2.style.float = "left";
+
+        anaRef.innerHTML = `<b>Análise de Referência</b><br> 
+        O projeto ${nomeDoProjeto} com custo por hora de 
+        R$<span style = "color: red"><b>${F}</b></span> é 
+        <span style = "color: red"><b>${H}%</b></span> 
+        em relação a referência de mercado 
+        <span style = "color: red"><b>${Y}</b></span><br>
+        
+        O projeto <span style = "color: blue"><b>${nomeDoProjeto2}</b></span> com
+        custo por hora de 
+        R$<span style = "color: blue"><b>${P}</b></span> é 
+        <span style = "color: blue"><b>${R}%</b></span> em relação a referência de mercado 
+        <span style = "color: blue"><b>${Y}</b></span><br>`;
+    }
+</script>

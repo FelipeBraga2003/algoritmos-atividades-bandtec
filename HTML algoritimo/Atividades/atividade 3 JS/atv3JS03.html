@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CALCULADORA DE PREÇO DE GRAMA</h1>
+    Quantos metros quadrados de grama você precisa:
+    <input id="tamanhoGrama" placeholder="Digite quantos metros quadrados de grama você precisa"><br>
+
+    <button onclick="custoGrama()">Calcular custo da grama</button><br>
+
+    <span id="primeiraFrase"></span><br>
+    <span id="gramaEsme"></span><br>
+    <span id="gramaBt"></span><br>
+    <span id="gramaSC"></span><br>
+
+</body>
+</html>
+
+<script>
+    function custoGrama(){
+        var tamGrama = Number(tamanhoGrama.value);
+        var gramEsma = 9.70 * tamGrama;
+        var gramaEsmeralda = (9.70 * tamGrama) + 150.00;
+        var bata = 8.70 * tamGrama;
+        var gramaBata = (8.70 * tamGrama) + 200.00;
+        var gramasc = 10.70 * tamGrama;
+        var gramaSaoC = (10.70 * tamGrama) + 100.00;
+
+        primeiraFrase.innerHTML = `Para ${tamGrama} m2 de grama, nosso orçamento é`;
+        gramaEsme.innerHTML = `grama esmeralda = R$ ${gramEsma}, frete = R$150,00, valor total = R$${gramaEsmeralda} `;
+        gramaBt.innerHTML = `grama batatais = R$${bata}  frete = R$ 200,00,  valor total = R$${gramaBata} `;
+        gramaSC.innerHTML = `grama São Carlos = R$${gramasc},  frete = R$ 100,00,  valor total = R$${gramaSaoC}`;
+    }
+</script>

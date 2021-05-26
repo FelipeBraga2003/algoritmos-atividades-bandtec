@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Horas de sono: <input id="hrsono" placeholder="Digite quantas horas você dorme por noite">
+
+    <button onclick="calcson()">Calcular sono</button>
+</body>
+</html>
+
+<script>
+    function calcson(){
+        var sono = Number(hrsono.value);
+        
+        alert(`Você durmio ${sono * 0.05} horas na fase 1`);
+        alert(`Você durmio ${sono * 0.45} horas na fase 2`);
+        alert(`Você durmio ${sono * 0.3} horas na fase 3`);
+        alert(`Você durmio ${sono * 0.2} horas na fase REM`);
+    }
+</script>

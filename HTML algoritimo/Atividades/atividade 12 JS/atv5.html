@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite uma tabuada que queira ver <input id="qualTabuada"><br>
+
+    <button onclick="verTabu()">Ver tabuada</button>
+    <br>
+
+    <span id="frase"></span>
+</body>
+</html>
+
+<script>
+    function verTabu(){
+        var tabu = Number(qualTabuada.value);
+        var contador = 1;
+
+        frase.innerHTML = "";
+
+        
+        while(contador <= 10){
+            var final = tabu * contador;
+            frase.innerHTML += `${tabu} x ${contador} = ${final}<br>`;
+            ++contador
+        }
+    }
+</script>

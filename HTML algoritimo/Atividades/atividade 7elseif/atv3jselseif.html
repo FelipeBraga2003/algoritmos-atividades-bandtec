@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual time grande de São Paulo você torce 
+    <select id="times">
+        <option value="Corinthians">Corinthians</option>
+        <option value="Palmeiras">Palmeiras</option>
+        <option value="Santos">Santos</option>
+        <option value="São Paulo">São Paulo</option>
+    </select><br>
+
+    <button onclick="faleSobreTime()">Fale sobre esse time</button><br>
+
+    <span id="priTime"></span>
+</body>
+</html>
+
+<script>
+    function faleSobreTime(){
+        
+        if (times.value == "Corinthians") {        
+            priTime.innerHTML = `Salve o Corinthians`;
+            priTime.style.color = "white";
+            priTime.style.backgroundColor = "black";
+
+        }
+        if (times.value == "Palmeiras") {
+            priTime.innerHTML = `Salve o alviverde imponente`;
+            priTime.style.color = "white";
+            priTime.style.backgroundColor = "green";
+        } 
+        if(times.value == "Santos"){
+            priTime.innerHTML = `Agora que dá a bola é o Santos`;
+            priTime.style.color = "black";
+            priTime.style.backgroundColor = "white";
+        } 
+        if(times.value == "São Paulo"){
+            priTime.innerHTML = `Salve o Tricolor paulista`;
+            priTime.style.color = "red";
+            priTime.style.backgroundColor = "black";
+        }
+    }
+</script>

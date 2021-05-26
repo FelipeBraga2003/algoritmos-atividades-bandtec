@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>CALCULADORA FINANCEIRA DE GASTO COM DESENTUPIMENTO DE CANOS</h3>
+    Digite a quantidade de metros que vai  desentupir: 
+    <input id="qtdMetros" placeholder="Quantidade de metros para dessentupir"><br>
+
+    <button onclick="calcCusto()">Calcular custo</button><br>
+
+    <span id="nicanor"></span><br>
+    <span id="rotirute"></span><br>
+    <span id="diferenca"></span><br>
+</body>
+</html>
+
+<script>
+    function calcCusto(){
+        var metros = Number(qtdMetros.value);
+        var nica = (metros * 10.00) + 50.00;
+        var roti = (metros * 9.80) + 600.00;
+        var dife =  roti - nica;
+
+        nicanor.innerHTML = `O serviço da Nicanor sai por R$${nica}`;
+        rotirute.innerHTML = `O serviço da Rotirute sai por R$${roti}`;
+        diferenca.innerHTML = `A diferença entre os valores é R$${dife}`;
+    }
+</script>

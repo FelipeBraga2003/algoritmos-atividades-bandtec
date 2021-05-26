@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="iniciarJogo()" id="iniJogo">Iniciar jogo</button><br><br><br>
+    <h1 id="gameOver"></h1><br>
+
+    <div onclick="bateScorpion()" id="priImagem"></div>
+    <div id="barra"></div>
+    <span id="priLutador">Golpes sofridos pelo lutador 1: 0</span><br>
+
+    <div onclick="bateSub()" id="segImagem"></div>
+    <div id="barraDois"></div>
+    <span id="segLutador">Golpes sofridos pelo lutador 2: 0</span>
+
+    <br><br>
+</body>
+</html>
+
+<script>
+    function iniciarJogo(){
+        priImagem.innerHTML = `<img id="priImagemm"src="scorpion.png" alt="Chatão ninguém usa width"><br>`;
+        priImagemm.style.width = `300px`;
+        priImagemm.style.height = "300px";
+        priImagem.style.width = `500px`;
+        priImagem.style.height = "350px";  
+        
+        barra.style.width = `${vidaBarraSub}%`;
+        barra.style.height = "35px";
+        barra.style.backgroundColor = "blue";   
+
+        segImagem.innerHTML = `<img id="segImagemm"src="escolhido.png" alt="Top tem até musiquinha"><br>`;
+        segImagemm.style.width = `300`;
+        segImagemm.style.height = "300px";
+        segImagem.style.width = `500px`;
+        segImagem.style.height = "350px";
+
+        barraDois.style.width = `${vidaBarraScorp}%`;
+        barraDois.style.height = "35px";
+        barraDois.style.backgroundColor = "green";
+        
+        iniJogo.style.display = "none";
+    }
+
+    var cliqueSub = 0;
+    var cliqueScorpion = 0;
+
+    var vidaBarraScorp = 100;
+    var vidaBarraSub = 100;
+    
+    function bateScorpion(){
+        cliqueScorpion = cliqueScorpion +1;
+        
+        var randomScorp = parseInt((Math.random() * 10) + 1);
+       
+        if (vidaBarraScorp <= 20) {
+            vidaBarraScorp = vidaBarraScorp - 20;
+        }else if(randomScorp > 5){
+            vidaBarraScorp = vidaBarraScorp - 40;
+        }else if(randomScorp >=1 && randomScorp <=5){
+            vidaBarraScorp = vidaBarraScorp - 20;
+        }
+        console.log(vidaBarraScorp);
+        priLutador.innerHTML = `Golpes sofridos pelo lutador 1: ${cliqueScorpion}`;
+        barra.style.width = `${vidaBarraScorp}%`;
+        
+        if (vidaBarraScorp <= 50) {
+            barra.style.backgroundColor = "red";   
+        }
+        
+        if (vidaBarraScorp == 0) {
+            gameOver.innerHTML = `Scorpin perdeu, a luta acabou`;
+        }
+    }
+
+    function bateSub(){
+        cliqueSub = cliqueSub +1;
+        
+        var randomSub = parseInt((Math.random() * 10) + 1);
+        
+        if (vidaBarraSub <= 20) {
+            vidaBarraSub = vidaBarraSub - 20;
+        }else if(randomSub > 5){
+            vidaBarraSub = vidaBarraSub - 40;
+        }else if(randomSub >=1 && randomSub <=5){
+            vidaBarraSub = vidaBarraSub - 20;
+        }
+        console.log(vidaBarraSub);
+        segLutador.innerHTML = `Golpes sofridos pelo lutador 2: ${cliqueSub}`;
+        barraDois.style.width = `${vidaBarraSub}%`;
+
+        if (vidaBarraSub <= 50) {
+            barraDois.style.backgroundColor = "red";   
+        }
+        if (vidaBarraSub == 0) {
+            gameOver.innerHTML = `SubZero perdeu, a luta acabou`;      
+        }
+    }
+</script>

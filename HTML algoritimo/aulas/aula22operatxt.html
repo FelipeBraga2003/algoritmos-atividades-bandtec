@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Frase <input onkeyup="transformacoes()" id="inputFrase">
+    <br>
+    Primeira letra: <span id="priLetra"></span>
+    <br>
+    Última letra:  <span id="ultLetra"></span>
+    <br>
+    Email valido<span id="spamTemArroba"></span>
+    <br>
+    Começa com a? <span id="comecaComA"></span>
+    <br>
+    Termina com .com.br? <span id="spanTerminaEmail"></span>
+    <br>
+    Frase em maiusculo <span id="fraseMaius"></span>
+    <br>
+    Frase em minusculo <span id="fraseMenos"></span>
+</body>
+</html>
+
+<script>
+    function transformacoes(){
+        var frase = inputFrase.value;
+        priLetra.innerHTML = frase[0];         
+        ultLetra.innerHTML = frase[frase.length - 1];
+
+        if (frase.indexOf("@") > -1 && frase.indexOf(".") > -1 ) {
+            spamTemArroba.innerHTML = "Sim";
+        }else{
+            spamTemArroba.innerHTML = "Não";
+        }
+
+        if (frase.startsWith("a")) {
+            comecaComA.innerHTML = "Sim";
+        }else{
+            comecaComA.innerHTML = "Não";
+        }
+        if (frase.endsWith(".com.br")) {
+            spanTerminaEmail.innerHTML = "Sim";
+        }else{
+            spanTerminaEmail.innerHTML = "Não";
+        }
+        fraseMaius.innerHTML = frase.toUpperCase();
+        fraseMenos.innerHTML = frase.toLowerCase();
+
+        // CÓDIGO DO PROFESSOR
+        /*var fraseComecaComA = frase.startsWith("a");
+        if(fraseComecaComA) {
+            span_comeca_correto.innerHTML = "Sim";
+        } else {
+            span_comeca_correto.innerHTML = "Não";
+        }
+
+        var fraseTerminaComPontoComBR = frase.endsWith(".com.br");
+        if(fraseTerminaComPontoComBR) {
+            span_termina_correto.innerHTML = "Sim";
+        } else {
+            span_termina_correto.innerHTML = "Não";
+        }
+        */ 
+    }
+</script>

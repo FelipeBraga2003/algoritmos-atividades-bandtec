@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>CALCULADORA E LAMPADA</h3>
+
+    Digite a quantidade de lampadas necessárias:
+    <input id="qtdLampada" placeholder="Digite a quantidade de lampadas"><br>
+    Digite o valor médio da conta de luz:
+    <input id="valConta" placeholder="valor médio da conta de luz"><br>
+
+    <button onclick="calcLampadas()">Calcular valor de lampadas e retorno</button><br>
+
+    <span id="invest"></span><br>
+    <span id="econo"></span><br>
+    <span id="retorn"></span><br>
+</body>
+</html>
+
+<script>
+    function calcLampadas(){
+        var lampada = Number(qtdLampada.value);  
+        var conta = Number(valConta.value);
+        var investimento = lampada * 20.00;
+        var contaFin = conta * 0.1;   
+        var meses = investimento / contaFin;
+
+        invest.innerHTML = `O seu investimento em lâmpadas será de R$ ${investimento}`;
+        econo.innerHTML = `A sua economia na conta de luz será de R$ ${contaFin}`;
+        retorn.innerHTML = `Portanto, em ${meses} meses o seu investimento será retornado.`;
+    }
+</script>

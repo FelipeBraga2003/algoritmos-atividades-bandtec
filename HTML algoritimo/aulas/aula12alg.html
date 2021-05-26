@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        Nome: <input id="inpNome" placeholder="Digite o seu nome">
+        <br> 
+        Bairro: <input id="inpBairro" placeholder="Digite o bairro onde mora">
+        <br>
+        Idade: <input id="inpIdade" placeholder="Digite sua idade">
+        <br>
+        <button onclick="relatório()">Relatório</button>
+        <button onclick="relatorioBonito()">Relatório bonito</button>
+    </body>
+</html>
+
+<script>
+    function relatório(){
+        alert(`Seu nome é  ${inpNome.value}`); //Uma parte desse texto é fixa, e a outra é dinamica, que é o que está no input
+        alert(`Você mora no bairro  ${inpBairro.value} `); //O nome disso é interpolação
+        alert(`Sua idade é  ${inpIdade.value}`);
+    }
+    function relatorioBonito(){
+        alert(`Seu nome é ${inpNome.value}, Você mora no bairro ${inpBairro.value}, Sua idade é ${inpIdade.value}`);
+        alert(`O resultado de 15 vezes 2 é ${15 * 2}`);
+    }
+</script>

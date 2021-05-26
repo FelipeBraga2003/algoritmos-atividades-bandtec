@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas latas de refrigerante você bebe por dia <input id="qtdLatas">
+    <br>
+    <button onclick="calcRefri()">Quantos refris?</button><br>
+
+    <span id="frase"></span>
+</body>
+</html>
+
+<script>
+    function calcRefri(){
+        var refri = Number(qtdLatas.value);
+        var calcTot = refri * 365;
+
+        if (calcTot >= 500) {
+            frase.innerHTML = `Cuidado com diabetes!`;
+        }
+        frase.innerHTML += `<br>Você consome um total de ${calcTot}`;
+    }
+</script>

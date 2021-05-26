@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite seus filmes favoritos <input id="inFilmeFavorito"><br>
+    <button onclick="cadastrar()">Cadastrar</button><br>
+    <div id="painel"></div>
+    <div id="painel2"></div>
+    <div id="totFilmesFavoritos"></div>
+</body>
+</html>
+<script>
+    let listaFilmes = [];
+
+    function cadastrar(){
+        let contador = 0; 
+        let filmeFavorito = inFilmeFavorito.value;
+        listaFilmes.push(filmeFavorito);
+
+        painel.innerHTML = "";
+
+        for (contador = 0; contador < listaFilmes.length; contador++) {
+            painel.innerHTML = `Seu ${contador + 1}º filme favorito é: ${listaFilmes[contador]}<br>`;
+
+            if (listaFilmes.length >=3) {
+                painel.innerHTML = `Seu ${contador + 1}º filme favorito é: ${listaFilmes[2]}<br>`;
+            }
+
+        }
+        totFilmesFavoritos.innerHTML = `Total de filmes: ${contador++}`;
+
+
+        // for (contador = 0; contador < listaFilmes.length; contador++) {
+        //     if (contador == 0) {
+        //         painel.innerHTML = `Seu primeiro filme favorito é: ${listaFilmes[contador]}<br>`;
+        //     }else if(contador <3){
+        //         painel2.innerHTML = `Seu 3º filme favorito é: ainda não existe<br>`;
+        //     }else{
+        //         painel2.innerHTML = `Seu 3º filme favorito é: ${listaFilmes[contador]}<br>`;
+        //     }
+        // }
+
+    }
+</script>

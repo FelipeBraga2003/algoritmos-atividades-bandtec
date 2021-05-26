@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <h3>PROGRAMA VIAGENS</h3>
+
+        Digite o valor da passagem de onibus<input id="psBus"><br>
+        Digite a quantidade de viagens que você faz por mês <input id="qtdBus"><br>
+        Digite a distância do seu trabalho até a sua casa <input id="distCs"><br>
+
+        <button onclick="calcVt()">Calcular VT</button><br>
+
+        <span id="frase"></span>
+
+    </body>
+</html>
+<script>
+    function calcVt(){
+        var bus = Number(psBus.value);
+        var qvig = Number(qtdBus.value);
+        var dist = Number(distCs.value);
+        var uber = qvig * 0.1;
+        var valUber = dist * 0.75;
+
+        var qtaBus = qvig * 0.9;
+        var valBus = qtaBus * bus;
+        
+        var ttvig = valUber + valBus;
+
+        frase.innerHTML = `Você vai gastar R$${ttvig} por mês com transporte.`;
+    }
+</script>

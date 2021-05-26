@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="frase">Você já clicou 0 vezes</span><br>
+
+    <button onclick="calculoCaba()">Calculo cabalístico</button>
+</body>
+</html>
+
+<script>
+    var cliques = 0
+    function calculoCaba(){
+        
+        cliques = cliques +1;
+
+        frase.innerHTML = `Você já clicou ${cliques} vezes`;
+
+        if (cliques == 3 ||cliques == 4 ||cliques == 7 ||cliques == 10) {
+            
+            alert(`Você clicou ${cliques} vezes e Juliana gosta desse número!`);
+        }
+    }
+</script>

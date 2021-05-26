@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Numero qualquer<input id="inNumero">
+    <br>
+    <button onclick="cadastrarNumero()">Analisar histórico</button>
+    <br>
+    <div id="divHistorico"></div>
+</body>
+</html>
+<script>
+
+    var listaNumeros = [];
+
+    function cadastrarNumero() {
+        var numero  = Number(inNumero.value);
+        listaNumeros.push(numero);
+        analisarHistorico();
+    }
+    
+    function analisarHistorico(){
+        divHistorico.innerHTML = "";
+        var menor = listaNumeros[0];
+        var maior = 0;
+        for (var contador = 0; contador < listaNumeros.length; contador++) {
+            var numero = listaNumeros[contador];
+            if (numero > maior) {
+                maior = numero;
+            }
+            if (numero < menor) {
+                menor = numero
+            }
+            divHistorico.innerHTML += `${contador + 1}º número - ${listaNumeros[contador]}<br>`;
+        }
+        divHistorico.innerHTML +=`
+        Maior número ${maior}
+        <br>
+        Menor número ${menor}
+        `;
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="frase">Valor guardado no cofrinho: R$0.00</span><br>
+    <span id="deposi">Quantidade de depósitos feitos: 0</span><br>
+    <span id="retirada">Quantidade de retiradas feitas: 0</span><br>
+
+
+    Digite o valor a ser depositado <input id="valorDeposito"><br>
+
+    <button onclick="depositar()">Depositar</button><br>
+    <button onclick="tirarTudo()">Tirar toda a grana</button>
+</body>
+</html>
+
+<script>
+
+    var saldoNovo = 0;
+    var qtdCliques = 0;
+    var qtdClique = 0;
+
+    function depositar() {
+        var deposito = Number(valorDeposito.value);
+        saldoNovo = saldoNovo += deposito;
+
+        frase.innerHTML = `Valor guardado no cofrinho: R$${saldoNovo}`;
+        deposi.innerHTML = `Quantidade de depósitos feitos: ${++qtdCliques}`;
+    }
+    function tirarTudo(){
+
+        frase.innerHTML = `Valor guardado no cofrinho: R$0.00`;
+        retirada.innerHTML = `Quantidade de retiradas feitas: ${++qtdClique}`;
+    }
+</script>

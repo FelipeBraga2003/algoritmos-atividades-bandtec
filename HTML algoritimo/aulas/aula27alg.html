@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite uma fruta <input id="inFruta"><br>
+    <button onclick="addFruta()">Adicionar fruta</button><br>
+    <button onclick="verNota()">Ver nota fiscal</button>
+    <div id="listaFruta"></div>
+    <div id="notinha"></div>
+
+</body>
+</html>
+<script>
+    let precoFruta = 0;
+    let qtdFrutas = 0;
+    let primeiraFruta = "";
+    let ultimaFruta = "";
+    var lista_frutas = [];
+
+    function addFruta() {
+        // let nomeFruta = inFruta.value;
+        // listaFruta.style.display = "block";
+        // notinha.style.display = "none";
+        
+        lista_frutas.push(inFruta.value);
+        listaFruta.style.display = "block";
+
+        listaFruta.innerHTML ="";
+
+        for (let contador = 0; contador < lista_frutas.length; contador++) {
+            if (contador % 2 ==0) {
+                listaFruta.innerHTML += `<span style="color: blue;">${contador + 1}º ${lista_frutas[contador]}</span> <br>`;
+            }else{
+                listaFruta.innerHTML += `<span style="color: red;">${contador + 1}º ${lista_frutas[contador]}</span> <br>`;
+            }
+
+        }
+        precoFruta += 2.50;
+
+        // if (qtdFrutas == 0) {
+        //     primeiraFruta = nomeFruta;
+        // } 
+        // ultimaFruta = nomeFruta;
+        // qtdFrutas++
+
+    }
+    
+    function verNota() {
+        notinha.style.display = "block";
+        listaFruta.style.display = "none";
+        notinha.innerHTML += `Preço da fruta: ${lista_frutas.length * 2.50}<br>`;
+        notinha.innerHTML += `Quantidade de frutas: ${lista_frutas.length}<br>`;
+        notinha.innerHTML += `Primeira fruta adicionada: ${lista_frutas[0]}<br>`;
+        notinha.innerHTML += `Ultima fruta adicionada: ${lista_frutas[lista_frutas.length - 1]}<br>`;
+
+    }
+</script>

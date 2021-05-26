@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos pães franceses você consome por dia <input id="qtdPaes"><br>
+    Quantas bolachas recheadas você come por dia <input id="qtdBolachas"><br>
+    Quantos copos de achocolatado você toma por dia <input id="qtdAchocolatado"><br>
+
+    <button onclick="veriCalo()">Verificar calorias</button><br>
+
+    <span id="frase"></span>
+    <div id="imagem"></div>
+</body>
+</html>
+
+<script>
+    function veriCalo(){
+        var pao = Number(qtdPaes.value); 
+        var bolacha = Number(qtdBolachas.value); 
+        var achocolatado = Number(qtdAchocolatado.value); 
+        
+        var caloPao = pao *50;
+        var caloBolacha = bolacha *80;
+        var caloAcho = achocolatado *70;
+
+        var calcTot = caloPao + caloBolacha + caloAcho;
+
+        if (calcTot < 200) {
+            frase.innerHTML = `Parabéns, vai sair em forma da quarentena!`;
+            imagem.innerHTML = `<img src="pessoaEmForma.jfif" alt="cr7Forte">`;
+        }else if (calcTot <= 400) {
+            frase.innerHTML = `Cuidado, vai ficar mais "fofinho(a)" após quarentena!`;
+            imagem.innerHTML = `<img src="pessoaDeBoa.jfif" alt="não ta bom mais também não ta ruim">`;
+        }else{
+            frase.innerHTML = `Bom, acho que muitos não vão te reconhecer após a quarentena`;
+            imagem.innerHTML = `<img src="acimaDoPeso.jpg" alt="Gaules gordola">`;
+        }
+
+    }
+</script>
+</body>
+</html>

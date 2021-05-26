@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="escolheFilme">
+        <option value="filmeInvalido"></option>
+        <option value="Joker">Joker</option>
+        <option value="Liga da Justiça: Snyder cut">Liga da Justiça: Snyder cut</option>
+        <option value="Batman: O Cavaleiro das Trevas">Batman: O Cavaleiro das Trevas</option> 
+        <option value="Aquaman">Aquaman</option>
+    </select>
+    
+    <select id="selecionaFilme">
+        <option value="valorInvalido">-</option>
+        <option value="Vingadores: Guerra Infinita">Vingadores: Guerra Infinita</option>
+        <option value="Thor: Ragnarok">Thor: Ragnarok</option>
+        <option value="Guardiões da Galáxia">Guardiões da Galáxia</option>
+        <option value="Homem-Aranha: De Volta ao Lar">Homem-Aranha: De Volta ao Lar</option>
+    </select>
+
+    <button onclick="filmeMelhor()">Botao ver nota</button>
+    <div id="priImagem"></div>
+    <div id="segImagem"></div>
+</body>
+</html>
+
+<script>
+    function filmeMelhor(){
+        var filmeMarvel=selecionaFilme.value;
+        var filmeDC=escolheFilme.value;
+
+        var notaMarvel = 8.5;
+        var notaDC = 8.4;
+        priImagem.innerHTML  = `<img src="coringa.jfif" alt="coringa">`;
+        segImagem.innerHTML = `<img src="guerraInfinita.jfif" alt="Guerra Infinita">`;
+
+        if (filmeMarvel == "Thor: Ragnarok") {
+            notaMarvel = 7.9;
+            priImagem.innerHTML  = `<img src="thor.jfif" alt="coringa">`;
+        }
+        if (filmeMarvel == "Guardiões da Galáxia") {
+            notaMarvel = 8.1;
+            priImagem.innerHTML  = `<img src="guardioes.jfif" alt="coringa">`;
+        }
+        if (filmeMarvel == "Homem-Aranha: De Volta ao Lar") {
+            notaMarvel = 7.5;
+            priImagem.innerHTML  = `<img src="spider.jfif" alt="coringa">`;
+        }
+        if (filmeDC == "Liga da Justiça: Snyder cut") {
+            notaDC = 8.3;
+            segImagem.innerHTML = `<img src="snyder.jfif" alt="Guerra Infinita">`;
+        }
+        if (filmeDC == "Batman: O Cavaleiro das Trevas") {
+            notaDC = 9.0;
+            segImagem.innerHTML = `<img src="batma.jfif" alt="Guerra Infinita">`;
+        }
+        if (filmeDC == "Aquaman") {
+            notaDC = 9.5;
+            segImagem.innerHTML = `<img src="aquaman.jfif" alt="Guerra Infinita">`;
+        }
+        alert(`O filme ${filmeMarvel} tem uma nota de ${notaMarvel} e o filme ${filmeDC} tem uma nota de ${notaDC} no IMDB`);
+
+        var procentagemSuperior = 0;
+        if (notaDC > notaMarvel) {
+            procentagemSuperior = ((notaDC*100/notaMarvel) - 100);
+            alert(`O filme ${filmeDC} é ${procentagemSuperior.toFixed(2)}% superior a da Marvel`);
+        }else{
+            procentagemSuperior = ((notaMarvel*100/notaDC) - 100);
+            alert(`O filme ${filmeMarvel} é ${procentagemSuperior.toFixed(2)}% superior a da DC`);
+        }
+    } 
+</script>

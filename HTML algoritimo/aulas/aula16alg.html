@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Primeiro número <input id="priNum"><br>
+    Segundo número <input id="segNum"><br>
+
+    <button onclick="divisao()">Divisão</button><br>
+
+    <span id="result"></span>
+</body>
+</html>
+
+<script>
+    function divisao() {
+        // toFixed();
+        var primeiro= Number(priNum.value); 
+        var segundo = Number(segNum.value); 
+        var varDivisao = primeiro/segundo;
+
+        result.innerHTML = `O resultado de ${primeiro} com ${segundo}
+        é ${varDivisao.toFixed(2)}<br><br>`;
+
+        /*Com o que vimos até agora E sem utilizar mais de 1 if
+        Exiba É um número pequeno, quando um número for menor ou igual a 10
+        */
+        
+        if (varDivisao > 10) {
+            result.innerHTML += `Uau é um número gigante`;
+        }else{
+            result.innerHTML += `Uau é um número pequeno`;
+        }
+    }
+</script>

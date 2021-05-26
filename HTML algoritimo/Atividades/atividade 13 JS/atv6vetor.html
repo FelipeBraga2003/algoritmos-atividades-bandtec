@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o nome de um aluno <input id="inNomeAluno"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="pesquisar()">Pesquisar</button><br>
+    <div id="frase"></div>
+
+</body>
+</html>
+<script>
+    // RESOLUÇÃO DO PROFESSOR
+
+    let vetorAlunos = ["Rafael","Gustavo","João Pedro"];
+
+    function cadastrar() {
+        let aluno = inNomeAluno.value;
+        
+        var alunoExistente = false;
+
+        for (var contador = 0; contador < vetorAlunos.length; contador++) {
+            if (vetorAlunos[contador].toLowerCase() == aluno.toLowerCase()) {
+                alunoExistente = true;
+            }
+        }
+
+        if (alunoExistente) {
+            alert("Aluno repetido, hoje não amigão !");
+        }else{
+            vetorAlunos.push(aluno);
+        }
+
+        frase.innerHTML = "";
+
+        for (var contador = 0; contador < vetorAlunos.length; contador++) {
+            frase.innerHTML += `${vetorAlunos[contador]}<br>`;
+        }
+    }
+
+    function pesquisar(){
+        let aluno = inNomeAluno.value;
+
+        let alunoExisteLista = false;
+
+        for(var contador = 0; contador < vetorAlunos.length; contador++){
+            if (vetorAlunos[contador].toUpperCase() == aluno.toUpperCase()) {
+                alunoExisteLista = true;
+            }
+        }
+        if (alunoExisteLista) {
+            alert(`O aluno ${aluno} já existe na lista`);
+        }
+    }
+
+</script>

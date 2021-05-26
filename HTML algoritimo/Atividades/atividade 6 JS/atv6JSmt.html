@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número <input id="priNum"><br>
+    Digite um segundo número <input id="segNum"><br>
+
+    <button onclick="raiz()">Calcular raiz</button><br>
+
+    <span id="frase"></span>
+</body>
+</html>
+
+<script>
+    function raiz(){
+        var primero = Number(priNum.value);
+        var segundo = Number(segNum.value);
+
+        var calc = primero**(1/segundo);
+
+        frase.innerHTML = `${primero} ${segundo}ª raiz de a ${calc.toFixed(2)}`;
+    }
+</script>

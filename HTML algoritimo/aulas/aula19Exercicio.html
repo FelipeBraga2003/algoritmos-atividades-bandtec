@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select onchange="filmeMelhor()" id="selecionaFilme">
+        <option value="valorInvalido">-</option>
+        <option value="filmeGuerraInfinita">Vingadores: Guerra Infinita</option>
+        <option value="filmeThor">Thor: Ragnarok</option>
+        <option value="filmeGuardioes">Guardiões da Galáxia</option>
+        <option value="filmeHomemAranha">Homem-Aranha: De Volta ao Lar</option>
+    </select>
+
+</body>
+</html>
+
+<script>
+    function filmeMelhor(){
+        var notaPri = 85; 
+        var notaSeg = 79; 
+        var notaTer = 81; 
+        var notaQua = 75; 
+        
+        if (selecionaFilme.value == "filmeGuerraInfinita") {
+            alert(`O filme Vingadores: Guerra Infinita tem nota ${notaPri} no IMDB`);
+        }
+        if (selecionaFilme.value == "filmeThor") {
+            alert(`O filme Thor: Ragnarok tem nota ${notaSeg} no IMDB`);
+        }
+        if (selecionaFilme.value == "filmeGuardioes") {
+            alert(`O filme Guardiões da Galáxia tem nota ${notaTer} no IMDB`);
+        }
+        if (selecionaFilme.value == "filmeHomemAranha") {
+            alert(`O filme Homem-Aranha: De Volta ao Lar tem nota ${notaQua} no IMDB`);
+        }
+
+    }
+</script>

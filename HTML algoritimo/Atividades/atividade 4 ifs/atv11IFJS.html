@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o saldo da conta <input id="saldoConta"><br>
+    Qual o valor do débito <input id="valDebito"><br>
+
+    <button onclick="analiConta()">Analisar conta</button><br>
+
+    <span id="frase"></span>
+
+</body>
+</html>
+
+<script>
+    function analiConta() {
+        var saldo = Number(saldoConta.value);
+        var debito = Number(valDebito.value);
+        var calcTot = saldo - debito;
+        frase.innerHTML = `O saldo atual da conta corrente é ${calcTot}`;
+
+        if (calcTot < 0){
+            frase.innerHTML = `<span style="color: red"><b>O saldo atual da conta corrente é ${calcTot}</b></span>`;
+        }
+
+        
+    }
+</script>

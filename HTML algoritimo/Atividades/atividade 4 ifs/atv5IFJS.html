@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite sua primeira nota <input id="priNota"><br>
+    Digite sua segunda nota <input id="segNota"><br>
+    Digite sua terceira nota <input id="terNota"><br>
+    
+    <button onclick="analisDesemp()">Analisar desempenho</button>
+    <br>
+    <span id="frase"></span>
+</body>
+</html>
+
+<script>
+    function analisDesemp(){
+        var primeira = Number(priNota.value);
+        var segunda = Number(segNota.value);
+        var terceira = Number(terNota.value);
+
+        var calcNotas = (primeira + segunda + terceira) / 3;
+
+        frase.innerHTML = `Sua média foi de ${calcNotas}`;
+        
+        if (calcNotas >=9.4) {
+            frase.innerHTML += `<br>Parabéns, você é fora de série!`;
+        }
+
+    }
+</script>

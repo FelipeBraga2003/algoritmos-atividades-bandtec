@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a última série no estilo SITCOM que você assistiu? <input id="ultSer"><br>
+    Quantos episódios você assitiu desta série? <input id="qtdEpisodios"><br>
+
+    <button onclick="veriNiv()">Verificar nível</button><br>
+
+    <span id="frase"></span>
+</body>
+</html>
+
+<script>
+    function veriNiv() {
+        var episodios = Number(qtdEpisodios.value);
+        var calc = episodios * 22;
+        var calcTot = calc / 60;
+
+        frase.innerHTML = `Vejo que você gosta da série ${ultSer.value}`;
+
+        if (calcTot >30) {
+            frase.innerHTML += `<br>Uau, você realmente gosta dessa série!`;
+        }
+    }
+</script>

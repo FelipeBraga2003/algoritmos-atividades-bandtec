@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a nota do aluno <input id="inNotaAluno"><br>
+    Digite o intervalo de notas que deseja <input id="inNotaPri"><input id="inNotaSeg"><br>
+    <button onclick="cadastrar()">Cadastrar notas</button><br>
+    <button onclick="rever()">Rever notas</button><br>
+    <span id="frase"></span>
+
+</body>
+</html>
+<script>
+
+    let vetorNotas = []
+
+    function cadastrar() {
+        let notaAluno = Number(inNotaAluno.value);
+        vetorNotas.push(notaAluno);
+    }
+    function rever() {
+        let priIntervalo = Number(inNotaPri.value);
+        let segIntervalo = Number(inNotaSeg.value);
+
+        var listaNotasIntervalo = [];
+
+        for (let contador = 0; contador < vetorNotas.length; contador++) {
+            let notaAtual = vetorNotas[contador];
+            
+            if (notaAtual>= priIntervalo && notaAtual <= segIntervalo) {
+                listaNotasIntervalo.push(notaAtual);
+            }
+        }
+
+        var acumulador = 0;
+
+        for(var contador = 0; contador < listaNotasIntervalo.length; contador++){
+            acumulador += listaNotasIntervalo[contador];
+        }
+
+        var media = acumulador / listaNotasIntervalo.length
+
+        frase.innerHTML = `Foram cadastras ${listaNotasIntervalo.length} notas que estão no intervalo 
+        de  ${priIntervalo} até ${segIntervalo} e a média dessas notas é ${media.toFixed(2)}`;
+    }
+
+    // NÃO SEI SE TA CERTO, MAS TÁ AI
+    // function rever() {
+    //     let priIntervalo = Number(inNotaPri.value);
+    //     let segIntervalo = Number(inNotaSeg.value);
+
+    //     var NotasIntervalo = 0;
+    //     var acumulador = 0;
+
+    //     for (let contador = 0; contador < vetorNotas.length; contador++) {
+    //         let notaAtual = vetorNotas[contador];
+            
+    //         if (notaAtual>= priIntervalo && notaAtual <= segIntervalo) {
+    //             NotasIntervalo++;
+    //             acumulador += NotasIntervalo;
+    //         }
+    //     }
+
+    //     var media = acumulador / NotasIntervalo;
+
+    //     frase.innerHTML = `Foram cadastras ${NotasIntervalo} notas que estão no intervalo 
+    //     de  ${priIntervalo} até ${segIntervalo} e a média dessas notas é ${media.toFixed(2)}`;
+    // }
+</script>

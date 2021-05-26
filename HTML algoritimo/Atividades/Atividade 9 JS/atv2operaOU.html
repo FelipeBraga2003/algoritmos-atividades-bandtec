@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="selectPagamento">
+        <option value="Dinheiro">Dinheiro</option>
+        <option value="Cartão de débito">Cartão de débito</option>
+        <option value="Cartão de crédito">Cartão de crédito</option>
+        <option value="Boleto">Boleto</option>
+    </select>
+
+    <button onclick="analiCompra()">Analisar compra</button>
+</body>
+</html>
+
+<script>
+    function analiCompra(){
+        if (selectPagamento.value == "Dinheiro" || selectPagamento.value == "Cartão de débito") {
+            alert("Você terá que pagar a vista");
+        }else{
+            alert("Pagamento poderá ser parcelado");
+        }
+    }
+</script>

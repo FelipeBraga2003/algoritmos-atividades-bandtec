@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="carnes"></span> <br>
+    <button onclick="carnesF()">Carnes</button>
+    
+    <button onclick="legumesF()" id="legumes">Legumes</button>
+    
+    <button onclick="frutasF()" id="frutas">Frutas</button>
+
+</body>
+</html>
+
+<script>
+    function carnesF(){
+        carnes.innerHTML = "Gosto muito de carnes, como de vários tipos, tanto de peixe quanto de frango ou bovina";
+        document.title = "Último clique: botão de carnes";
+        carnes.style.color = "white";
+        carnes.style.backgroundColor = "red";
+    }
+    function legumesF(){
+        carnes.innerHTML = "Não gosto tanto, porém dependendo da forma que for feito fica muito gostoso";
+        document.title = "Último clique: botão de legumes";
+        carnes.style.color = "yellow";
+        carnes.style.backgroundColor = "black";
+    }
+    function frutasF(){
+        carnes.innerHTML = "Gosto de quase todo o tipo de frutas, tem poucas frutas que eu não gosto";
+        document.title = "Último clique: botão de frutas";
+        carnes.style.color = "green";
+        carnes.style.backgroundColor = "white";
+    }
+</script>

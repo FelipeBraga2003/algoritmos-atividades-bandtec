@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas pessoas estão infectadas atualmente <input id="qtdPessoasInfectadas"><br>
+
+    <button onclick="calcInfectados()">Quantas pessoas infectadas ontem</button><br>
+    <button onclick="calcInfectadosAmanha()">Quantas pessoas infectadas amanhã</button><br>
+    <button onclick="calcInfectadosMes()">Quantas pessoas infectadas daqui a 1 mês</button><br>
+
+    <span id="frase"></span><br>
+    <span id="segFrase"></span><br>
+    <span id="fraseMes"></span>
+</body>
+</html>
+
+<script>
+    function calcInfectados(){
+        var pessoas = Number(qtdPessoasInfectadas.value);
+        var pessoasOntem = pessoas - 35; 
+        frase.innerHTML = `Ontem haviam ${pessoasOntem} pessoas infectadas`;
+    }
+    function calcInfectadosAmanha(){
+        var pessoas = Number(qtdPessoasInfectadas.value);
+        var pessoasAma = pessoas + 35; 
+        segFrase.innerHTML = `Amanhã haverão ${pessoasAma} pessoas infectadas`;
+    }
+    function calcInfectadosMes(){
+        var pessoas = Number(qtdPessoasInfectadas.value);
+        var pessoasMes = pessoas + (35 * 30); 
+        fraseMes.innerHTML = `Daqui a 1 mês haverão ${pessoasMes} pessoas infectadas`;
+    }
+</script>

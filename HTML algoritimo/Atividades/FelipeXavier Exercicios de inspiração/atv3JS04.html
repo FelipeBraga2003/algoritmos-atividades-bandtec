@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CALCULAR ÁREA VERDE DA IMAGEM</h1>
+    <img src="imagemVerdeTriangulo.png" alt="imagem verde com triângulo dentro"><br>
+
+    Informe o valor da base do triângulo:
+    <input id="baseTri" placeholder="Digite o valor da base do triângulo"><br>
+
+    <button onclick="calcAreaVerde()">Calcular área verde</button><br>
+
+    <span id="frase"></span>
+</body>
+</html>
+
+<script>
+    function calcAreaVerde(){
+        var base = Number(baseTri.value);
+        var altura = (base * 2) - 1;
+        var topoRet = (base * 3) + 1;
+        var ladoRet = (altura * 2) + 1;
+        var areaTri = (base * altura) / 2;
+        var area = ladoRet * topoRet; 
+
+        var calcTotal = area - areaTri;
+
+        frase.innerHTML = `<span style="backgroundColor: green">A área verde é de <b><i><u>${calcTotal} m2</u></i></b></span>, 
+        <span style="color:orange">pois o triâgulo tem área de </s><u>${areaTri} m2</u></s></span> e o 
+        <span style="color:green">retângulo tem área de <i>${area} m2</i></span>`;
+    }    
+</script>

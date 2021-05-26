@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe a nota do aluno <input id="inNota">
+    <br>
+    Informe a frequência do aluno <input id="inFrequencia">
+    <br>
+    <button onclick="verifiSituacao()">Verificar situação</button>
+</body>
+</html>
+
+<script>
+    /*
+    Se o aluno tiver nota maior >= 6
+    e frequência >= 70
+    Mostrar parabéns aprovado;
+    Se o aluno não atender os requisitos
+    Mostrar infelizmente reprovado
+    */
+    function verifiSituacao(){
+        var nota = Number(inNota.value);
+        var frequencia = Number(inFrequencia.value);
+
+        if (nota >=6 && frequencia >=70) {
+            alert("Parabéns aprovado");
+        }else{
+            alert("Infelizmente reprovado");
+        }
+
+    }
+</script>

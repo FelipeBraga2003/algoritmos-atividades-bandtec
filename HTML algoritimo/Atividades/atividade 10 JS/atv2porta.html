@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="listaConvidadosA">
+        <option value="0">Carnes e derivados de animais</option>
+        <option value="1">Apenas opções veganas</option>
+    </select><br>
+    <select id="listaConvidadosB">
+        <option value="0">Carnes e derivados de animais</option>
+        <option value="1">Apenas opções veganas</option>
+    </select><br>
+
+    <button onclick="verificar()">Verificar</button><br>
+    <span id="frase"></span>
+</body>
+</html>
+
+<script>
+    function verificar(){
+        var listaA = listaConvidadosA.value;
+        var listaB = listaConvidadosB.value;
+
+        if (listaA == "1" && listaB =="1") {
+            frase.innerHTML = "Para uma taxa de sucesso de 100% dessa festa, é melhor ir de veggie ;)";
+        }else if(listaA == "0" && listaB =="0"){
+            frase.innerHTML = "Tá tudo liberado, pode servir o que quiser :D";
+        }else{
+            frase.innerHTML = "A festa tem uma probabilidade de fracasso de 83%";
+        }
+    }
+</script>

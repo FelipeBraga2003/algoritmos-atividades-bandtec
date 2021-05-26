@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="frase">Você já clicou 0 vezez</span><br>
+
+    <button onclick="cliques()">Clica neu</button><br>
+
+    <span id="digamentos"></span>
+</body>
+</html>
+
+<script>
+    var clicadas = 0;
+    function cliques(){
+        frase.innerHTML = `Você já clicou ${++clicadas} vezez`;
+        if (clicadas < 5) {
+            digamentos.innerHTML = `Dedo fraquinho, hein`;
+        }else if (clicadas<=10) {
+            digamentos.innerHTML = `Dedo bom, mano`;
+        }else if(clicadas <=15){
+            digamentos.innerHTML = `Gosta de clicar, hein!`;
+        }else{
+            digamentos.innerHTML = `Eita dedo nervoso!`;
+        }
+    }
+</script>

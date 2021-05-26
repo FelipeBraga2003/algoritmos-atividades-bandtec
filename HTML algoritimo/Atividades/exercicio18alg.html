@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input id="inputNumero"><br> -->
+    <h1>CLIQUE NO BOTÃO PARA INCREMENTAR UM NÚMERO</h1>
+    <button onclick="incrementar()">Incrementar</button>
+    <button onclick="decrementar()">Decrementar</button>
+    <button onclick="limpar()">Limpar</button><br>
+    
+    <span id="incre"></span>
+    <span id="decre"></span>
+
+</body>
+</html>
+
+<script>
+    
+    var numero = 0;
+
+    function incrementar(){
+        if (numero == 12) {
+            alert("O usuário não gostará do próximo número");
+        }
+        incre.innerHTML += `O número atual é ${++numero}<br>`;
+    }
+
+    function decrementar(){
+        if (numero == 14) {
+            alert("O usuário não gostará do próximo número");
+        }
+        decre.innerHTML += `O número atual é ${--numero}`;
+    }
+    function limpar(){
+        numero = 0;
+        incre.innerHTML = ``;
+        decre.innerHTML = ``;
+    }
+</script>

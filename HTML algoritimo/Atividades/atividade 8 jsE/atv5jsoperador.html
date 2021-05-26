@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite sua renda <input id="inRenda"><br>
+    Digite a renda total da sua familia <input id="inRendaFamilia"><br>
+
+    <button onclick="verifiAjuda()">Verificar ajuda</button><br>
+
+    <span id="frase"></span>
+
+</body>
+</html>
+
+<script>
+    function verifiAjuda() {
+        var renda = Number(inRenda.value);
+        var rendaFamilia = Number(inRendaFamilia.value);
+
+        if (renda <=1050 && rendaFamilia <=2100) {
+            frase.innerHTML = "Você terá direito!";
+        }else{
+            frase.innerHTML = "Você NÃO terá direito";
+        }
+
+    }
+</script>

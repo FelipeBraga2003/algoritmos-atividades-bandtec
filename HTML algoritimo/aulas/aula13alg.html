@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        Primeiro número: <input id="inputPri">
+        <br>
+        Segundo número: <input id="inputSeg">
+        <br>
+
+        <button onclick="multiplicar()">Multiplicar</button>
+        <button onclick="dividir()">Dividir</button>
+        <button onclick="subtrair()">Subtrair</button>
+        <button onclick="somar()">Somar</button>
+        <button onclick="potencia()">Potência</button>
+    </body>
+</html>
+
+<script>
+    function multiplicar(){
+        var n1 = Number(inputPri.value);
+        var n2 = Number(inputSeg.value);
+        alert(`A multiplicação de ${n1} por ${n2} é ${n1 * n2}`);
+        }
+    function dividir(){
+        var n1 = Number(inputPri.value);
+        var n2 = Number(inputSeg.value);
+        alert(`A divisão de ${n1} por ${n2} é ${n1 / n2}`);
+    }
+    function subtrair(){
+        var n1 = Number(inputPri.value);
+        var n2 = Number(inputSeg.value);
+        alert(`A subtração de ${n1} por ${n2} é ${n1 - n2}`);
+    }
+    function somar(){
+        var n1 = Number(inputPri.value);
+        var n2 = Number(inputSeg.value);
+        alert(`A soma de ${n1} por ${n2} é ${n1 + n2}`);
+    }
+   function potencia(){
+        var n1 = Number(inputPri.value);
+        var n2 = Number(inputSeg.value);
+        alert(`A pontenciação de ${n1} por ${n2} é ${n1 ** n2}`);
+    }
+</script>

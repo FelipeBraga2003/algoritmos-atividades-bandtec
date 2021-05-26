@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor da premiação total: <input id="valorPremiacao"><br>
+    Número máximo de rodadas: <input id="maxRodadas"><br>
+
+    Resultado time A
+    <select id="listaTimeA">
+        <option value="3">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select><br>
+    Resultado time B
+    <select id="listaTimeB">
+        <option value="3">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select><br>
+    Resultado time C
+    <select id="listaTimeC">
+        <option value="3">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select><br>
+
+    <button onclick="realiRodada()">Realizar rodada</button>
+
+    <button onclick="revelarPremiacao()">Revelar premiação</button>
+
+    <span id="spanRodadaAtual"></span>
+    <div id="pontTimeContainer"></div>
+    <div id="premiContainer"></div>
+</body>
+</html>
+
+<script>
+    var pontoA =0;
+    var pontoB =0;
+    var pontoC =0;   
+    var rodadaAtual = 0;
+    function realiRodada(){
+        var valor = Number(valorPremiacao.value);
+        var rodada = Number(maxRodadas.value);
+
+        if (valor >= 1000 && rodada > 0) {
+            pontoA += Number(listaTimeA.value);
+            pontoB += Number(listaTimeB.value); 
+            pontoC += Number(listaTimeC.value);
+
+            pontTimeContainer.innerHTML = `
+            Time A: ${pontoA}<br>
+            Time B: ${pontoB}<br>
+            Time C: ${pontoC}
+            `;
+
+            spanRodadaAtual.innerHTML = `Rodada Atual ${++rodadaAtual}`;
+            if (rodadaAtual == rodada) {
+                revelarPremiacao();
+            }
+        }else{
+            alert("Dados inválidos para rodada");
+        }
+    }
+
+    function revelarPremiacao(){
+        var valor = Number(valorPremiacao.value);
+        var somatoriaPontos = pontoA + pontoB + pontoC;
+
+        var premiTimeA = (100 * pontoA) / somatoriaPontos;
+        var premiTimeB = (100 * pontoB) / somatoriaPontos;
+        var premiTimeC = (100 * pontoC) / somatoriaPontos;
+
+        var valorTotPremiA = (valor * premiTimeA)/ 100
+        var valorTotPremiB = (valor * premiTimeB)/ 100
+        var valorTotPremiC = (valor * premiTimeC)/ 100
+
+        premiContainer.innerHTML = `
+        Time A: ${valorTotPremiA.toFixed(2)}<br>
+        Time B: ${valorTotPremiB.toFixed(2)}<br>
+        Time C: ${valorTotPremiC.toFixed(2)}
+        `;
+    }
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o valor do carro avista <input id="valorAvista"><br>
+    Digite a taxa de juros <input id="taxaJuros"><br>
+    Digite a quantidade de parcelas <input id="qtdParcelas"><br>
+
+    <button onclick="calcPreju()">Calcular preju</button><br>
+
+    <span id="frase"></span>
+</body>
+</html>
+
+<script>
+    function calcPreju(){
+        var valor = Number(valorAvista.value);
+        var juros = Number(taxaJuros.value);
+        var parcelas = Number(qtdParcelas.value);
+
+        // valor total 
+        var valorPorParcela = valor / parcelas;
+        var calcJuros = juros / parcelas;
+        var calcTot = (1+(juros *0.01) * parcelas) * valor;
+
+        // valor do carro avista
+        var calcValorCarro = valor * 0.80;
+
+        // valor quantidade de carros
+        var calcQtdCarro = calcTot/valor;
+
+        frase.innerHTML = `Seu carro vai sair por um total de R$${calcTot.toFixed(2)}. 
+        Após 1 mês, ele já vai valer só R$${calcValorCarro.toFixed(2)}. Porque comprou financiado, 
+        vai pagar o correspondente a ${calcQtdCarro.toFixed(1)} carros;`;
+
+
+    }
+</script>

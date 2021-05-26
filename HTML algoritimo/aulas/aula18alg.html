@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputNumero"><br>
+    <button onclick="incrementarSimples()">Incrementar (simples)</button><br>
+    <button onclick="decrementarSimples()">Decrementar (simples)</button><br>
+    <button onclick="incrementarAvançado()">Incrementar (avançado)</button><br>
+    <button onclick="decrementarSimples()">Decrementar (avançado)</button><br>
+
+    <span id="incre"></span><br>
+    <span id="decre"></span>
+</body>
+</html>
+
+<script>
+    
+    var numero = 0;
+
+    function incrementarSimples(){
+        // numero = numero + 1;
+        // numero += 10;
+        // numero++; 
+        alert(`O número atual é ${numero++}`);
+    }
+    function decrementarSimples(){
+        // numero = numero - 1;
+        // numero -= 10;
+        numero--;
+
+    }
+    function incrementarAvançado(){
+        if (++numero == 13) {
+            alert("O usuário não gostará do próximo número");
+        }
+        incre.innerHTML = `O número atual é ${numero}`;
+    }
+    function decrementarSimples(){
+        if (numero == 14) {
+            alert("O usuário não gostará do próximo número");
+        }
+        decre.innerHTML += `O número atual é ${--numero}<br>`;
+    }
+</script>

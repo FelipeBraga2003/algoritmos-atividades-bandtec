@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de repetição</title>
+</head>
+<body>
+    <!-- Digite a frase: <input id="input_frase">
+    <br>
+    <button onclick="repetir_frase()">Repetir frase</button>
+    <br>
+    <div id="div_resultado"></div> -->
+
+    Digite a quantidade de vezes que deseja repetir a frase: <input id="input_quantidade">
+    <br>
+    Digite uma frase: <input id="input_frase">
+    <br>
+    <button onclick="comecar()">COMEÇAR</button>
+    <br>
+    <span id="span_frase"></span>
+    <br>
+</body>
+</html>
+
+<script>
+    // function repetir_frase() {
+    //     var contador = 0;
+    //     while (contador < 10) {
+    //         div_resultado.innerHTML += `${input_frase.value}<br>`;
+    //         ++contador;
+    //     }
+
+    // }
+
+    function comecar() {
+        var frase = input_frase.value;
+        var num_repeticao = Number(input_quantidade.value);
+        var contador = 0;
+
+        // Professor e Caua
+        // if (num_repeticao >= 2) {
+        //     while (contador < num_repeticao) {
+        //         span_frase.innerHTML += `${frase}<br>`;
+        //         ++contador;
+        //     }
+        // } else {
+        //     span_frase.innerHTML = `${frase}<br>`;
+        // }
+
+        // Renan
+        if (num_repeticao != 1) {
+            while (contador < num_repeticao) {
+                span_frase.innerHTML += `${frase}<br>`;
+                ++contador;
+            }
+        } else {
+            span_frase.innerHTML = `${frase}<br>`;
+        }
+    }
+</script>
+
+<!-- RESTO DA DIVISAO:
+
+    10 / 2 = 5 resto 0
+
+    40 / 3 = 13 resto 1
+
+    ==============================
+
+    RESTO DA DIVISAO = % 
+
+    10 % 2 retorna 0;
+
+    40 % 3 retorna 1;
+-->

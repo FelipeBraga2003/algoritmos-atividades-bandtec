@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos homens entraram no elevador <input id="qtdHomens"><br>
+    Quantos mulheres entraram no elevador <input id="qtdMulher"><br>
+
+    <button onclick="analiPeso()">Analisar peso</button><br>
+
+    <span id="frase"></span>
+</body>
+</html>
+
+<script>
+    function analiPeso() {
+        var homem = Number(qtdHomens.value);
+        var mulher = Number(qtdMulher.value);
+
+        var pesoHomem = homem * 80;
+        var pesoMulher = mulher * 60;
+        var pesoTot = pesoHomem + pesoMulher;
+
+        frase.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${pesoTot}kg`;
+
+        if (pesoTot > 800) {
+            frase.innerHTML += `<br><span style = "color: blue">Será necessário descer alguém 
+                para que o elevador se movimente</span>`;
+        }
+    }
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="amoTime()">Amo o escudo do meu time!</button><br>
+    <div id="imagem"></div>
+</body>
+</html>
+<script>
+    function amoTime(){
+        var contador = 0;
+
+        while(contador<7){
+            imagem.innerHTML += `<img src="santos.png" alt="Peixão"><br>`;
+            ++contador;
+        }
+    }
+</script>
