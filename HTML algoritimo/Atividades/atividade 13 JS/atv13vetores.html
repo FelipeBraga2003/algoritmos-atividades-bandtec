@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome produto: <input id="inputNomeProduto">
+    <br>
+    Preço de compra: <input id="inputPrecoCompra">
+    <br>
+    <button onclick="cadastrarValores()">Cadastrar</button>
+    <br>
+    <button onclick="listagemProdutos()">Relatório de estoque</button>
+    <br>
+    <span id="totalDeProdutos"></span>
+    <span id="lista"></span>
+    <span id="listaMaisCaro"></span>
+    <span id="listaMaisBarato"></span>
+    <span id="listaMediaProdutos"></span>
+</body>
+</html>
+<script>
+    var vetorNomeProduto = [];
+    var vetorPrecoCompra = [];
+
+
+    function cadastrarValores(){
+        let nomeProduto = inputNomeProduto.value;
+        let precoCompra = Number(inputPrecoCompra.value);
+
+        vetorNomeProduto.push(nomeProduto);
+        vetorPrecoCompra.push(precoCompra);
+    }
+
+    function listagemProdutos(){
+        lista.innerHTML = "";
+        var menorPreco = vetorPrecoCompra[0];
+        var maiorPreco = 0;
+        for (var contador = 0; contador < vetorPrecoCompra.length; contador++) {
+            var numero = vetorPrecoCompra[contador];
+            if (numero > maiorPreco) {
+                maiorPreco = numero;
+            }
+            if (numero < menorPreco) {
+                menorPreco = numero
+            }
+            totalDeProdutos.innerHTML = `Total de produtos: ${vetorPrecoCompra.length}<br>`;
+            let calculoImposto = vetorPrecoCompra[contador] * 1.24;
+            lista.innerHTML += `Produto ${contador + 1}: ${vetorNomeProduto[contador]}<br>
+                                Preço compra: ${vetorPrecoCompra[contador]} Vende por: ${calculoImposto.toFixed(2)}<br>`;
+            if(vetorPrecoCompra[contador] >= maiorPreco){
+                listaMaisCaro.innerHTML = `Produto mais caro: ${vetorNomeProduto[contador]}<br>`;
+            }
+            if(vetorPrecoCompra[contador] <= menorPreco){
+                listaMaisBarato.innerHTML = `Produto mais barato: ${vetorNomeProduto[contador]}<br>`;
+            }
+        }
+        
+        var somaProdutos = 0;
+        for (var contador = 0; contador < vetorPrecoCompra.length; contador++) {
+            somaProdutos += vetorPrecoCompra[contador] * 1.24;
+
+            mediaProdutos = somaProdutos / vetorPrecoCompra.length;
+            listaMediaProdutos.innerHTML = `Soma dos produtos: ${somaProdutos}<br>
+            Médiados produtos: ${mediaProdutos}`;
+        }
+    }
+
+    
+</script>
