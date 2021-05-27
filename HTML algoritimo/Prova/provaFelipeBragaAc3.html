@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="formularioDeCadastroVisivel()">Cadastrar produtos</button>
+    <button onclick="formularioDeVendaVisivel()">Iniciar nova venda</button>
+    <div id="divFormularioCadastroProdutos" style="display: none;">
+        Código do produto <input id="inputCodigoDoProduto">
+        <br>
+        Nome do produto <input id="inputNomeDoProduto">
+        <br>
+        Preço unitário <input id="inputPrecoUnitarioDoProduto">
+        <br>
+        Quantidade em estoque <input id="inputQuantidadeEmEstoqueProduto">
+        <br>
+        <button onclick="salvarProduto()">Salvar Produto</button>
+    </div>
+
+    <div id="divFormularioDeVenda" style="display: none;">
+        Código do produto <input id="inputCodigoDoProdutoVenda">
+        <br>
+        Quantidade vendida <input id="inputQuantidadeVendidaProduto">
+        <br>
+        <button onclick="registrarVenda()">Registrar venda</button>
+        <br>
+        <button onclick="finalizarVenda()">Finalizar venda</button>
+    </div>
+
+    <div id="divNotaFiscal">
+        <span id="spanTotalVendido"></span>
+        <span id="spanInformacoesVenda"></span>
+    </div>
+</body>
+</html>
+<script>
+
+    function formularioDeCadastroVisivel(){
+        divFormularioCadastroProdutos.style.display = "block";
+        divFormularioDeVenda.style.display = "none";
+        spanTotalVendido.innerHTML = "";
+        spanInformacoesVenda.innerHTML = "";
+    }
+    
+    var vetorCodigoProduto = [];
+    var vetorNomeProduto = [];
+    var vetorPrecoProduto = [];
+    var vetorQuantidadeProduto = [];
+
+    function salvarProduto(){
+        let codigoProduto = inputCodigoDoProduto.value;
+        let nomeProduto = inputNomeDoProduto.value;
+        let precoUnitariodoProduto = Number(inputPrecoUnitarioDoProduto.value);
+        let quantidadeDoProduto = Number(inputQuantidadeEmEstoqueProduto.value);
+        let codigoExistente = false;
+
+        for (var contador = 0; contador < vetorCodigoProduto.length; contador++) {
+            if (vetorCodigoProduto[contador] == codigoProduto) {
+                codigoExistente = true;
+            }
+        }
+        if (codigoExistente == false) {
+            vetorCodigoProduto.push(codigoProduto);
+            vetorNomeProduto.push(nomeProduto);
+            vetorPrecoProduto.push(precoUnitariodoProduto);
+            vetorQuantidadeProduto.push(quantidadeDoProduto);
+    
+            alert("Produtos cadastrados com sucesso!!");
+        }else{
+            alert("Código existente");
+        }
+    }
+
+    function formularioDeVendaVisivel(){
+        divFormularioCadastroProdutos.style.display = "none";
+        divFormularioDeVenda.style.display = "block";
+    }
+
+    var vetorCodigoVenda = [];
+    var vetorQuantidadeVendida = [];
+
+    function registrarVenda(){
+        let codigoProdutoVenda = inputCodigoDoProdutoVenda.value;
+        let quantidadeVendida = Number(inputQuantidadeVendidaProduto.value);
+        let precoUnitariodoProduto = Number(inputPrecoUnitarioDoProduto.value);
+        let quantidadeProdutoCerta = false;
+        let codigoExistente = false;
+
+        for (var contador = 0; contador < vetorCodigoProduto.length; contador++) {
+            if (vetorQuantidadeProduto[contador] >= quantidadeVendida) {
+                vetorQuantidadeProduto[contador] = vetorQuantidadeProduto[contador] - quantidadeVendida;    
+                quantidadeProdutoCerta = true;
+            }
+            if(codigoProdutoVenda == vetorCodigoProduto[contador]){
+                codigoExistente = true;
+            }
+        }
+        
+        
+        if(codigoExistente && quantidadeProdutoCerta){
+            vetorCodigoVenda.push(codigoProdutoVenda);
+            vetorQuantidadeVendida.push(quantidadeVendida);
+
+            alert("Venda registrada com sucesso!");
+        }else if (quantidadeProdutoCerta == false) {
+            alert("Quantidade insuficiente");
+        }else if (codigoExistente == false) {
+            alert("Produto não encontrado");
+        }
+    }
+
+    function finalizarVenda(){
+        spanTotalVendido.innerHTML = "";
+        spanInformacoesVenda.innerHTML = "";
+
+        for (var contador = 0; contador < vetorCodigoVenda.length; contador++) {
+            spanTotalVendido.innerHTML = `Total vendido: ${vetorCodigoVenda.length}<br>`;
+            spanInformacoesVenda.innerHTML += `Produto ${contador + 1}: 
+                        ${vetorNomeProduto[contador]} <br>
+                        Valor unitário: R$${vetorPrecoProduto[contador]} -
+                        Unidades vendidas: ${vetorQuantidadeVendida[contador]}<br>
+                        SubTotal: R$${vetorPrecoProduto[contador] * vetorQuantidadeVendida[contador]}<br>`;
+        }
+
+        vetorCodigoVenda = [];
+        vetorQuantidadeVendida = [];
+    }
+</script>
